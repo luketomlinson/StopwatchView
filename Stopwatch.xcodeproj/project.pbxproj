@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E36093501D32ED0F00914FD2 /* NeedleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360934F1D32ED0F00914FD2 /* NeedleView.swift */; };
 		E370D4A91D317DBD005A00C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370D4A81D317DBD005A00C0 /* AppDelegate.swift */; };
 		E370D4AB1D317DBD005A00C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370D4AA1D317DBD005A00C0 /* ViewController.swift */; };
 		E370D4AE1D317DBD005A00C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E370D4AC1D317DBD005A00C0 /* Main.storyboard */; };
 		E370D4B01D317DBD005A00C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E370D4AF1D317DBD005A00C0 /* Assets.xcassets */; };
 		E370D4B31D317DBD005A00C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E370D4B11D317DBD005A00C0 /* LaunchScreen.storyboard */; };
+		E370D4BB1D317E07005A00C0 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370D4BA1D317E07005A00C0 /* StopwatchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E360934E1D32E86300914FD2 /* Needle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Needle.playground; sourceTree = "<group>"; };
+		E360934F1D32ED0F00914FD2 /* NeedleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleView.swift; sourceTree = "<group>"; };
 		E370D4A51D317DBD005A00C0 /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E370D4A81D317DBD005A00C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E370D4AA1D317DBD005A00C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		E370D4AF1D317DBD005A00C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E370D4B21D317DBD005A00C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E370D4B41D317DBD005A00C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E370D4BA1D317E07005A00C0 /* StopwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
+		E370D4BC1D317E24005A00C0 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,14 @@
 			children = (
 				E370D4A81D317DBD005A00C0 /* AppDelegate.swift */,
 				E370D4AA1D317DBD005A00C0 /* ViewController.swift */,
+				E370D4BA1D317E07005A00C0 /* StopwatchView.swift */,
+				E360934F1D32ED0F00914FD2 /* NeedleView.swift */,
+				E370D4BC1D317E24005A00C0 /* MyPlayground.playground */,
 				E370D4AC1D317DBD005A00C0 /* Main.storyboard */,
 				E370D4AF1D317DBD005A00C0 /* Assets.xcassets */,
 				E370D4B11D317DBD005A00C0 /* LaunchScreen.storyboard */,
 				E370D4B41D317DBD005A00C0 /* Info.plist */,
+				E360934E1D32E86300914FD2 /* Needle.playground */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -137,6 +147,8 @@
 			files = (
 				E370D4AB1D317DBD005A00C0 /* ViewController.swift in Sources */,
 				E370D4A91D317DBD005A00C0 /* AppDelegate.swift in Sources */,
+				E370D4BB1D317E07005A00C0 /* StopwatchView.swift in Sources */,
+				E36093501D32ED0F00914FD2 /* NeedleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +298,7 @@
 				E370D4B91D317DBD005A00C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
