@@ -17,11 +17,11 @@ class ViewController: UIViewController {
         
         
         super.viewDidLoad()
-        view.backgroundColor = UIColor.grayColor()
+        view.backgroundColor = UIColor.gray()
     }
 
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print(stopwatchView.layoutMargins)
     }
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         animation.duration = 60.0
         //animation.fromValue = 0.0
         animation.byValue = 2.0 * CGFloat(M_PI)
-        stopwatchView.needleView?.layer.addAnimation(animation, forKey: "rotation animation")
+        stopwatchView.needleView?.layer.add(animation, forKey: "rotation animation")
         
     }
 }
