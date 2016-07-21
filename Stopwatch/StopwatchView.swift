@@ -39,20 +39,17 @@ class StopwatchView:UIView{
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-        addLabels()
-        addNeedle()
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        addLabels()
-        addNeedle()
+
         backgroundColor = UIColor.black()
     }
     
     private func addNeedle(){
         let needle = NeedleView(frame:bounds)
-        //needle.backgroundColor = UIColor.clearColor()
         needleView = needle
         addSubview(needle)
     }
@@ -90,10 +87,10 @@ class StopwatchView:UIView{
     
     override func draw(_ rect: CGRect) {
         drawLine(startAngle: 0.0, endAngle: 2.0 * CGFloat.pi)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
-        context.restoreGState()
+//        guard let context = UIGraphicsGetCurrentContext() else {
+//            return
+//        }
+//        context.restoreGState()
     }
     
     
@@ -152,6 +149,12 @@ class StopwatchView:UIView{
             context.restoreGState()
         }
         
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addLabels()
+        addNeedle()
     }
     
 }
