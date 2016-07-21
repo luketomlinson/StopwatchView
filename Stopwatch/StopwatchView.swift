@@ -61,8 +61,8 @@ class StopwatchView:UIView{
         
         print("Bounds\(bounds)")
         print("Frame\(frame)")
-        let angle:CGFloat = CGFloat(-M_PI / 3.0)
-        let totalRotationAngle = CGFloat(2.0 * M_PI)
+        let angle:CGFloat = CGFloat.pi / -3.0
+        let totalRotationAngle = 2.0 * CGFloat.pi
         let rotationPerTick = totalRotationAngle/CGFloat(numLabels)
         
         for i in 0..<numLabels{
@@ -71,38 +71,25 @@ class StopwatchView:UIView{
             label.text = "\(Int(increment)*(i+1))"
             label.font = UIFont(name: "Helvetica-Bold", size: 28.0)
             
-            //print(labelDistance)
             let x = cos(angle + rotationPerTick * CGFloat(i)) * labelDistance
             let y = sin(angle + rotationPerTick * CGFloat(i)) * labelDistance
-            print("x:\(x)")
-            print("y:\(y)")
-            //print("Center:\(center)")
-            print("Text: " + label.text!)
-            print("Center:\(center)")
-            //let convertedCenter = superview?.convertPoint(center, toView: self)
+            
             let centerX = bounds.width / 2.0
             let centerY = bounds.width / 2.0
-            //let convertedCenter = convertPoint(center, fromView: superview)
-            let point = CGPoint(x: centerX + x, y: centerY + y)
-            print(convert(point, from: superview))
-            print(convert(point, to: superview))
             
-            print("Point:\(point)")
-            print(label.frame)
+            let point = CGPoint(x: centerX + x, y: centerY + y)
             
             label.center = point
-            //label.backgroundColor = UIColor.yellowColor()
             label.textAlignment = .center
             addSubview(label)
             
-            print("----------")
             
         }
         
     }
     
     override func draw(_ rect: CGRect) {
-        drawLine(startAngle: 0.0, endAngle: CGFloat(2.0*M_PI))
+        drawLine(startAngle: 0.0, endAngle: 2.0 * CGFloat.pi)
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }

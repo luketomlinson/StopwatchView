@@ -106,6 +106,8 @@
 				TargetAttributes = {
 					E370D4A41D317DBD005A00C0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = NXW75H6BKJ;
+						DevelopmentTeamName = "Luke Tomlinson (Personal Team)";
 						LastSwiftMigration = 0800;
 					};
 				};

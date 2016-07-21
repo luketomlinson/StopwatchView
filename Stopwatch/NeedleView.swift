@@ -11,7 +11,7 @@ import UIKit
 class NeedleView:UIView{
     
     let lineWidth:CGFloat = 2.0
-    var rotationPoint:CGPoint = CGPointZero
+    var rotationPoint:CGPoint = CGPoint.zero
     let centerRadius:CGFloat = 4.0
     
     var secondaryLineLength:CGFloat {
@@ -22,14 +22,26 @@ class NeedleView:UIView{
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.clearColor()
+        commonInit()
+        
     }
     
-    override func drawRect(rect: CGRect) {
+    func commonInit(){
+        backgroundColor = UIColor.clear()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        context.saveGState()
+        
         let centerX = bounds.width / 2.0
         let centerY = bounds.width / 2.0
         
@@ -37,16 +49,16 @@ class NeedleView:UIView{
         
         
         let path = UIBezierPath()
-        path.moveToPoint(CGPoint(x: CGRectGetMidX(bounds), y: 0))
-        path.addLineToPoint(CGPoint(x: realCenter.x, y: realCenter.y - (lineWidth + centerRadius)))
+        path.move(to: CGPoint(x: bounds.midX, y: 0))
+        path.addLine(to: CGPoint(x: realCenter.x, y: realCenter.y - (lineWidth + centerRadius)))
         path.lineWidth = lineWidth
-        path.addArcWithCenter(realCenter, radius: centerRadius, startAngle: CGFloat(-M_PI_2), endAngle: CGFloat(2*M_PI), clockwise: true)
-        path.moveToPoint(CGPoint(x: realCenter.x, y: realCenter.y + (centerRadius)))
-        path.addLineToPoint(CGPoint(x: realCenter.x, y: realCenter.y + (lineWidth+centerRadius+secondaryLineLength)))
-        //UIColor.orangeColor().setFill()
-        UIColor.orangeColor().setStroke()
-        //path.fill()
+        path.addArc(withCenter: realCenter, radius: centerRadius, startAngle: CGFloat.pi / 2.0, endAngle: 2.0 * CGFloat.pi, clockwise: true)
+        path.move(to: CGPoint(x: realCenter.x, y: realCenter.y + (centerRadius)))
+        path.addLine(to: CGPoint(x: realCenter.x, y: realCenter.y + (lineWidth+centerRadius+secondaryLineLength)))
+        context.setStrokeColor(UIColor.orange().cgColor)
         path.stroke()
+        
+        context.restoreGState()
     }
     
     
