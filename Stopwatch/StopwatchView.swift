@@ -10,6 +10,7 @@ import UIKit
 
 class StopwatchView:UIView{
     
+    //MARK: - Properties
     let numLabels = 12
     
     let lineWidth:CGFloat = 2.0
@@ -18,6 +19,8 @@ class StopwatchView:UIView{
     let increment = 5.0
     let labelInset:CGFloat = 35.0
     var needleView:NeedleView?
+    
+    private var labels:[UILabel] = []
     
    
     var labelDistance:CGFloat{
@@ -37,37 +40,56 @@ class StopwatchView:UIView{
         }
     }
     
+    //MARK: - Initializers
+    func commonInit(){
+        addLabels()
+        addNeedle()
+        backgroundColor = UIColor.black()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame:frame)
-
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
-        backgroundColor = UIColor.black()
+        commonInit()
     }
     
+    //MARK: - Needle
     private func addNeedle(){
         let needle = NeedleView(frame:bounds)
         needleView = needle
         addSubview(needle)
     }
     
+    private func layoutNeedle(){
+        needleView?.frame = bounds
+    }
+    
+    //MARK: - Labels
     private func addLabels(){
-        
-        print("Bounds\(bounds)")
-        print("Frame\(frame)")
-        let angle:CGFloat = CGFloat.pi / -3.0
-        let totalRotationAngle = 2.0 * CGFloat.pi
-        let rotationPerTick = totalRotationAngle/CGFloat(numLabels)
         
         for i in 0..<numLabels{
             let label = UILabel(frame:CGRect(x: 0, y: 0, width: 50, height: 50))
             label.textColor = UIColor.white()
             label.text = "\(Int(increment)*(i+1))"
             label.font = UIFont(name: "Helvetica-Bold", size: 28.0)
-            
+            label.textAlignment = .center
+            labels.append(label)
+            addSubview(label)
+        }
+        
+    }
+    private func layoutLabels(){
+        
+        let angle:CGFloat = CGFloat.pi / -3.0
+        let totalRotationAngle = 2.0 * CGFloat.pi
+        let rotationPerTick = totalRotationAngle/CGFloat(numLabels)
+        
+        for i in 0..<numLabels{
+            let label = labels[i]
             let x = cos(angle + rotationPerTick * CGFloat(i)) * labelDistance
             let y = sin(angle + rotationPerTick * CGFloat(i)) * labelDistance
             
@@ -78,13 +100,11 @@ class StopwatchView:UIView{
             
             label.center = point
             label.textAlignment = .center
-            addSubview(label)
-            
-            
         }
-        
     }
+
     
+    //MARK: - Drawing
     override func draw(_ rect: CGRect) {
         drawLine(startAngle: 0.0, endAngle: 2.0 * CGFloat.pi)
 //        guard let context = UIGraphicsGetCurrentContext() else {
@@ -153,8 +173,8 @@ class StopwatchView:UIView{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        addLabels()
-        addNeedle()
+        layoutLabels()
+        layoutNeedle()
     }
     
 }
