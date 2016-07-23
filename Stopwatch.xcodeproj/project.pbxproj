@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E355EFE11D4401B000B6EED7 /* Gauge.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Gauge.playground; sourceTree = "<group>"; };
 		E360934E1D32E86300914FD2 /* Needle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Needle.playground; sourceTree = "<group>"; };
 		E360934F1D32ED0F00914FD2 /* NeedleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleView.swift; sourceTree = "<group>"; };
 		E370D4A51D317DBD005A00C0 /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +71,7 @@
 				E370D4B11D317DBD005A00C0 /* LaunchScreen.storyboard */,
 				E370D4B41D317DBD005A00C0 /* Info.plist */,
 				E360934E1D32E86300914FD2 /* Needle.playground */,
+				E355EFE11D4401B000B6EED7 /* Gauge.playground */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
