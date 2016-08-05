@@ -11,6 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var fullButton: UIButton!{
+        didSet{
+            fullButton.tintColor = UIColor.orange()
+        }
+    }
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var stopwatchView: StopwatchView!
     @IBOutlet weak var startStopButton: UIButton!
@@ -44,25 +49,22 @@ class ViewController: UIViewController {
             startStopButton.setTitle("Pause", for: [])
         }
         else if(!animator.isRunning){
-            animator.startAnimation()
+            
+            let parameters = UISpringTimingParameters(dampingRatio: 0.2, initialVelocity: CGVector(dx: 0.8, dy: 0.8))
+            animator.continueAnimation(withTimingParameters: parameters, durationFactor: 1-animator.fractionComplete)
             startStopButton.setTitle("Pause", for: [])
         }
-        else{
+        else if(animator.isRunning){
             animator.pauseAnimation()
             startStopButton.setTitle("Start", for: [])
         }
-//        let animation = CABasicAnimation(keyPath: "transform.rotation")
-//        animation.duration = 60.0
-//        animation.byValue = 2.0 * CGFloat(M_PI)
-//        stopwatchView.needleView?.layer.add(animation, forKey: "rotation animation")
-        
-        
         
     }
     
     @IBAction func resetPressed(_ sender: AnyObject) {
         animator.stopAnimation(true)
         startStopButton.setTitle("Start", for: [])
+        stopwatchView.needleView?.transform = CGAffineTransform.identity
         first = true
     }
     @IBAction func sliderInteractionBegin(_ sender: UISlider) {
@@ -86,6 +88,16 @@ class ViewController: UIViewController {
         
         animator.continueAnimation(withTimingParameters: nil, durationFactor: 1.0*(1-animator.fractionComplete))
         
+    }
+    @IBAction func fullButtonPressed(_ sender: AnyObject) {
+        
+        animator.stopAnimation(true)
+        stopwatchView.needleView?.transform = CGAffineTransform.identity
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.duration = 60.0
+        animation.byValue = 2.0 * CGFloat(M_PI)
+        stopwatchView.needleView?.layer.add(animation, forKey: "rotation animation")
+
     }
 }
 

@@ -50,10 +50,16 @@ class NeedleView:UIView{
         
         let path = UIBezierPath()
         path.lineWidth = lineWidth
-        path.move(to: CGPoint(x: bounds.midX, y: 0))
-        path.addLine(to: CGPoint(x: realCenter.x, y: realCenter.y - (lineWidth + centerRadius)))
         
-        path.addArc(withCenter: realCenter, radius: centerRadius, startAngle: CGFloat.pi / 2.0, endAngle: 2.0 * CGFloat.pi, clockwise: true)
+        //top middle
+        path.move(to: CGPoint(x: bounds.midX, y: 0))
+        
+        let y = realCenter.y - (lineWidth + centerRadius)
+        path.addLine(to: CGPoint(x: realCenter.x, y: y))
+        
+        path.addArc(withCenter: realCenter, radius: centerRadius, startAngle: 3.0 * CGFloat.pi / 2.0, endAngle: 3.5 * CGFloat.pi, clockwise: true)
+        
+        
         path.move(to: CGPoint(x: realCenter.x, y: realCenter.y + (centerRadius)))
         path.addLine(to: CGPoint(x: realCenter.x, y: realCenter.y + (lineWidth+centerRadius+secondaryLineLength)))
         context.setStrokeColor(UIColor.orange().cgColor)

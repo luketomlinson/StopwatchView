@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QCw-3u-u0J">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
@@ -8,7 +8,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Stuff-->
+        <scene sceneID="ddf-T0-drh">
+            <objects>
+                <viewController id="eTt-N5-N1p" customClass="TimingViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rKp-NL-beI"/>
+                        <viewControllerLayoutGuide type="bottom" id="C4r-ZB-gbt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wE0-5w-lRV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJt-MY-GRm">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="eTt-N5-N1p" eventType="touchUpInside" id="P0X-jU-2VG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BJt-MY-GRm" firstAttribute="centerX" secondItem="wE0-5w-lRV" secondAttribute="centerX" id="8Jp-0p-kGr"/>
+                            <constraint firstItem="C4r-ZB-gbt" firstAttribute="top" secondItem="BJt-MY-GRm" secondAttribute="bottom" constant="19" id="Rkm-Bf-c5n"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="View Stuff" id="XZN-NT-ChR"/>
+                    <connections>
+                        <outlet property="button" destination="BJt-MY-GRm" id="qXH-A3-P00"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n71-38-lCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="553"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="eEn-R4-ikB">
+            <objects>
+                <tabBarController id="QCw-3u-u0J" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="HGD-ip-CJW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="qdA-Qb-ThJ"/>
+                        <segue destination="eTt-N5-N1p" kind="relationship" relationship="viewControllers" id="K7k-9m-5bf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCU-NY-axy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1297" y="31"/>
+        </scene>
+        <!--Stopwatch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,6 +79,24 @@
                                     <constraint firstAttribute="width" secondItem="bGt-4z-AiB" secondAttribute="height" multiplier="1:1" id="5fr-CA-7rw"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-BS-azr">
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHA-Qn-EYD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUf-HP-rCh">
+                                <state key="normal" title="Full"/>
+                                <connections>
+                                    <action selector="fullButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42l-JH-0Ns"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2W-D0-kVa">
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="buttonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0k-d1-dgW"/>
+                                </connections>
+                            </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-ak-OaT">
                                 <connections>
                                     <action selector="sliderInteractionBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Jcn-ck-3ip"/>
@@ -36,33 +106,25 @@
                                     <action selector="touchEnded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2uk-4K-DYT"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-BS-azr">
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zHA-Qn-EYD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2W-D0-kVa">
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="buttonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0k-d1-dgW"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R6J-ak-OaT" secondAttribute="bottom" constant="53" id="4Fs-q0-cu9"/>
                             <constraint firstItem="bGt-4z-AiB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5bq-dt-02a"/>
+                            <constraint firstItem="oUf-HP-rCh" firstAttribute="top" secondItem="bGt-4z-AiB" secondAttribute="bottom" constant="48" id="Bx6-v4-0v2"/>
                             <constraint firstItem="R6J-ak-OaT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="Djj-w5-Ts9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ccB-BS-azr" secondAttribute="trailing" constant="40" id="JU5-vJ-Z0M"/>
                             <constraint firstItem="p2W-D0-kVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="fOp-nm-GOk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R6J-ak-OaT" secondAttribute="trailing" constant="37" id="hgj-9A-hgz"/>
-                            <constraint firstItem="bGt-4z-AiB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i4q-22-aHh"/>
-                            <constraint firstItem="p2W-D0-kVa" firstAttribute="top" secondItem="bGt-4z-AiB" secondAttribute="bottom" constant="47" id="jyJ-Wc-e1e"/>
+                            <constraint firstItem="p2W-D0-kVa" firstAttribute="top" secondItem="bGt-4z-AiB" secondAttribute="bottom" constant="48" id="jyJ-Wc-e1e"/>
+                            <constraint firstItem="oUf-HP-rCh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lI2-9y-jQF"/>
                             <constraint firstItem="ccB-BS-azr" firstAttribute="top" secondItem="bGt-4z-AiB" secondAttribute="bottom" constant="47.5" id="qhq-in-Vo7"/>
+                            <constraint firstItem="R6J-ak-OaT" firstAttribute="top" secondItem="oUf-HP-rCh" secondAttribute="bottom" constant="20" id="w1L-Um-M1n"/>
+                            <constraint firstItem="bGt-4z-AiB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="yhH-lJ-Gw7"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" id="yRw-dr-GvT"/>
                     <connections>
+                        <outlet property="fullButton" destination="oUf-HP-rCh" id="afl-mq-so0"/>
                         <outlet property="resetButton" destination="ccB-BS-azr" id="6Ek-1a-y8R"/>
                         <outlet property="slider" destination="R6J-ak-OaT" id="8jl-lQ-eOh"/>
                         <outlet property="startStopButton" destination="p2W-D0-kVa" id="iky-cq-oVH"/>
@@ -71,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234.78260869565219" y="269.02173913043481"/>
+            <point key="canvasLocation" x="-299" y="-616"/>
         </scene>
     </scenes>
 </document>

@@ -14,6 +14,7 @@
 		E370D4B01D317DBD005A00C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E370D4AF1D317DBD005A00C0 /* Assets.xcassets */; };
 		E370D4B31D317DBD005A00C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E370D4B11D317DBD005A00C0 /* LaunchScreen.storyboard */; };
 		E370D4BB1D317E07005A00C0 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E370D4BA1D317E07005A00C0 /* StopwatchView.swift */; };
+		E38507A91D54E6FF0081B46D /* TimingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38507A81D54E6FF0081B46D /* TimingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E370D4B41D317DBD005A00C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E370D4BA1D317E07005A00C0 /* StopwatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		E370D4BC1D317E24005A00C0 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		E38507A81D54E6FF0081B46D /* TimingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				E370D4AA1D317DBD005A00C0 /* ViewController.swift */,
 				E370D4BA1D317E07005A00C0 /* StopwatchView.swift */,
 				E360934F1D32ED0F00914FD2 /* NeedleView.swift */,
+				E38507A81D54E6FF0081B46D /* TimingViewController.swift */,
 				E370D4BC1D317E24005A00C0 /* MyPlayground.playground */,
 				E370D4AC1D317DBD005A00C0 /* Main.storyboard */,
 				E370D4AF1D317DBD005A00C0 /* Assets.xcassets */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E370D4AB1D317DBD005A00C0 /* ViewController.swift in Sources */,
+				E38507A91D54E6FF0081B46D /* TimingViewController.swift in Sources */,
 				E370D4A91D317DBD005A00C0 /* AppDelegate.swift in Sources */,
 				E370D4BB1D317E07005A00C0 /* StopwatchView.swift in Sources */,
 				E36093501D32ED0F00914FD2 /* NeedleView.swift in Sources */,
