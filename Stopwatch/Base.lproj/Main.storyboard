@@ -1,13 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QCw-3u-u0J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QCw-3u-u0J">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="6iN-Tf-Abv">
+            <objects>
+                <viewController id="ltI-3W-nYD" customClass="ListViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wp7-22-1i4"/>
+                        <viewControllerLayoutGuide type="bottom" id="vYL-R4-BDC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D02-wV-j8u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cXi-Vl-ZMm">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cXi-Vl-ZMm" firstAttribute="top" secondItem="D02-wV-j8u" secondAttribute="top" id="4zF-KI-Abu"/>
+                            <constraint firstItem="cXi-Vl-ZMm" firstAttribute="leading" secondItem="D02-wV-j8u" secondAttribute="leading" id="9Be-n3-QSH"/>
+                            <constraint firstAttribute="trailing" secondItem="cXi-Vl-ZMm" secondAttribute="trailing" id="L3r-vY-BCP"/>
+                            <constraint firstItem="vYL-R4-BDC" firstAttribute="top" secondItem="cXi-Vl-ZMm" secondAttribute="bottom" id="Wnh-Jf-I3J"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="9eo-u6-J5E"/>
+                    <navigationItem key="navigationItem" id="ac2-vI-4Ky"/>
+                    <connections>
+                        <outlet property="tableView" destination="cXi-Vl-ZMm" id="C2I-W0-Vav"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjp-Wd-h0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-511" y="945"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="BHd-Mq-xRb">
+            <objects>
+                <viewController storyboardIdentifier="detail" id="vYo-jf-Kl7" customClass="DetailViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pux-L9-rE6"/>
+                        <viewControllerLayoutGuide type="bottom" id="smG-NT-jAR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pAU-0q-bjj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Z-TT-Xt8">
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="kCd-8N-zqp"/>
+                                    <constraint firstAttribute="width" constant="240" id="paU-oH-B1K"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q9Z-TT-Xt8" firstAttribute="centerX" secondItem="pAU-0q-bjj" secondAttribute="centerX" id="U9d-Va-1AA"/>
+                            <constraint firstItem="Q9Z-TT-Xt8" firstAttribute="centerY" secondItem="pAU-0q-bjj" secondAttribute="centerY" id="hrs-gM-q7S"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="customView" destination="Q9Z-TT-Xt8" id="DVK-LU-mXq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Png-7S-mXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="215" y="945"/>
+        </scene>
         <!--View Stuff-->
         <scene sceneID="ddf-T0-drh">
             <objects>
@@ -26,11 +94,19 @@
                                     <action selector="buttonPressed:" destination="eTt-N5-N1p" eventType="touchUpInside" id="P0X-jU-2VG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ce-oT-ze5">
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetPressed:" destination="eTt-N5-N1p" eventType="touchUpInside" id="VNh-zy-Kpw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BJt-MY-GRm" firstAttribute="centerX" secondItem="wE0-5w-lRV" secondAttribute="centerX" id="8Jp-0p-kGr"/>
+                            <constraint firstItem="BJt-MY-GRm" firstAttribute="centerX" secondItem="wE0-5w-lRV" secondAttribute="centerX" constant="-30" id="8Jp-0p-kGr"/>
+                            <constraint firstItem="0Ce-oT-ze5" firstAttribute="centerX" secondItem="wE0-5w-lRV" secondAttribute="centerX" constant="30" id="NJg-pw-ZyN"/>
                             <constraint firstItem="C4r-ZB-gbt" firstAttribute="top" secondItem="BJt-MY-GRm" secondAttribute="bottom" constant="19" id="Rkm-Bf-c5n"/>
+                            <constraint firstItem="C4r-ZB-gbt" firstAttribute="top" secondItem="0Ce-oT-ze5" secondAttribute="bottom" constant="19" id="rHd-hW-6sk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="View Stuff" id="XZN-NT-ChR"/>
@@ -40,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n71-38-lCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="553"/>
+            <point key="canvasLocation" x="-300" y="92"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eEn-R4-ikB">

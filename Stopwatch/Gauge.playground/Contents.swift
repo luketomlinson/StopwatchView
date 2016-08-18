@@ -7,7 +7,7 @@ import PlaygroundSupport
 class GaugeLayer:CAShapeLayer{
     
     var lineW:CGFloat = 2.0
-    var lineColor = UIColor.blue()
+    var lineColor = UIColor.blue
     var padding:CGFloat = 5.0
     var segmentWidth:CGFloat = 80.0
     
@@ -37,7 +37,7 @@ class GaugeLayer:CAShapeLayer{
 class Gauge:UIView{
     
     var lineWidth:CGFloat = 2.0
-    var lineColor = UIColor.blue()
+    var lineColor = UIColor.blue
     var padding:CGFloat = 5.0
     var segmentWidth:CGFloat = 80.0
     
@@ -57,7 +57,7 @@ class Gauge:UIView{
     }
     
     func commonInit() {
-        self.backgroundColor = UIColor.clear()
+        self.backgroundColor = UIColor.clear
         self.layer.addSublayer(gaugeLayer)
     }
     
@@ -92,7 +92,7 @@ class Gauge:UIView{
 
 
 let containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 800, height: 400))
-containerView.backgroundColor = UIColor.gray()
+containerView.backgroundColor = UIColor.gray
 
 let gaugeFrame = UIEdgeInsetsInsetRect(containerView.frame, UIEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0))
 
@@ -102,4 +102,14 @@ let gauge = Gauge(frame: gaugeFrame)
 containerView.addSubview(gauge)
 
 PlaygroundPage.current.liveView = containerView
+
+
+
+
+
+let context = UIGraphicsGetCurrentContext()
+context?.setStrokeColor(UIColor.blue.cgColor)
+
+
+
 

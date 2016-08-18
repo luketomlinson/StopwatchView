@@ -44,7 +44,7 @@ class StopwatchView:UIView{
     func commonInit(){
         addLabels()
         addNeedle()
-        backgroundColor = UIColor.black()
+        backgroundColor = .black
     }
     
     override init(frame: CGRect) {
@@ -73,7 +73,7 @@ class StopwatchView:UIView{
         
         for i in 0..<numLabels{
             let label = UILabel(frame:CGRect(x: 0, y: 0, width: 50, height: 50))
-            label.textColor = UIColor.white()
+            label.textColor = .white
             label.text = "\(Int(increment)*(i+1))"
             label.font = UIFont(name: "Helvetica-Bold", size: 28.0)
             label.textAlignment = .center
@@ -121,7 +121,7 @@ class StopwatchView:UIView{
             return
         }
         context.saveGState()
-        context.translate(x: r0,y: r0)
+        context.translateBy(x: r0,y: r0)
         
         for i in 1...Int(numTicks){
             
@@ -137,15 +137,12 @@ class StopwatchView:UIView{
             }
             
             if(i % (Int(increment)*granularity) == 0){
-                //UIColor.white().setStroke()
-                context.setStrokeColor(UIColor.white().cgColor)
+                context.setStrokeColor(UIColor.white.cgColor)
                 r1 = r0 - (4 * lineLength)
             }else{
-                context.setStrokeColor(UIColor.gray().cgColor)
+                context.setStrokeColor(UIColor.gray.cgColor)
             }
-            
-            
-            
+                        
             let startPoint = CGPoint(x:r0,y:0)
             let endPoint = CGPoint(x:r1, y: 0)
             
@@ -162,7 +159,7 @@ class StopwatchView:UIView{
             
             let angleDelta = rotationPerTick * CGFloat(i) + startAngle
             
-            context.rotate(byAngle: angleDelta)
+            context.rotate(by: angleDelta)
             
             path.stroke()
             path.fill()

@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var fullButton: UIButton!{
         didSet{
-            fullButton.tintColor = UIColor.orange()
+            fullButton.tintColor = .orange
         }
     }
     @IBOutlet weak var slider: UISlider!
@@ -28,10 +28,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.black()
-        startStopButton.tintColor = UIColor.orange()
-        slider.tintColor = UIColor.orange()
-        resetButton.tintColor = UIColor.orange()
+        view.backgroundColor = .black
+        startStopButton.tintColor = .orange
+        slider.tintColor = .orange
+        resetButton.tintColor = .orange
         slider.value = 0.0
     }
 
@@ -66,6 +66,7 @@ class ViewController: UIViewController {
         startStopButton.setTitle("Start", for: [])
         stopwatchView.needleView?.transform = CGAffineTransform.identity
         first = true
+        stopwatchView.needleView?.layer.removeAllAnimations()
     }
     @IBAction func sliderInteractionBegin(_ sender: UISlider) {
         print("SLider begin")
@@ -96,7 +97,7 @@ class ViewController: UIViewController {
         let animation = CABasicAnimation(keyPath: "transform.rotation")
         animation.duration = 60.0
         animation.byValue = 2.0 * CGFloat(M_PI)
-        stopwatchView.needleView?.layer.add(animation, forKey: "rotation animation")
+        stopwatchView.needleView?.layer.add(animation, forKey: "rotationAnimation")
 
     }
 }

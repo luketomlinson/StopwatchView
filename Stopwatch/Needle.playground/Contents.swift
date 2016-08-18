@@ -2,13 +2,13 @@
 
 import UIKit
 import XCPlayground
+import PlaygroundSupport
 
 
 let view = UIView(frame: CGRect(x: 0, y: 0, width: 700, height: 700))
-view.backgroundColor = UIColor.white()
+view.backgroundColor = UIColor.white
 
-XCPlaygroundPage.currentPage.liveView = view
-
+PlaygroundPage.current.liveView = view
 
 class NeedleView:UIView{
     
@@ -34,7 +34,7 @@ class NeedleView:UIView{
     }
     
     func commonInit(){
-        backgroundColor = UIColor.clear()
+        backgroundColor = UIColor.clear
     }
     
     override func draw(_ rect: CGRect) {
@@ -64,7 +64,7 @@ class NeedleView:UIView{
         
         path.move(to: CGPoint(x: realCenter.x, y: realCenter.y + (centerRadius)))
         path.addLine(to: CGPoint(x: realCenter.x, y: realCenter.y + (lineWidth+centerRadius+secondaryLineLength)))
-        context.setStrokeColor(UIColor.orange().cgColor)
+        context.setStrokeColor(UIColor.orange.cgColor)
         path.stroke()
         
         context.restoreGState()
@@ -77,3 +77,18 @@ class NeedleView:UIView{
 let nView = NeedleView(frame: view.frame)
 
 view.addSubview(nView)
+
+//func rotate(transform: CGAffineTransform = CGAffineTransform.identity) {
+//    let newTransform = transform.rotated(by: CGFloat(M_PI) / 4.0)
+//    
+//    UIView.animate(withDuration: 2.0, delay: 0.0, options: [.curveLinear], animations: {
+//        
+//        nView.transform = newTransform
+//        
+//        }, completion: { complete in
+//            rotate(transform: newTransform)
+//        })
+//    
+//}
+//
+//rotate()

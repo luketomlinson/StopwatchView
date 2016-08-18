@@ -32,7 +32,7 @@ class NeedleView:UIView{
     }
     
     func commonInit(){
-        backgroundColor = UIColor.clear()
+        backgroundColor = .clear
     }
     
     override func draw(_ rect: CGRect) {
@@ -41,6 +41,7 @@ class NeedleView:UIView{
             return
         }
         context.saveGState()
+        
         
         let centerX = bounds.width / 2.0
         let centerY = bounds.width / 2.0
@@ -62,7 +63,7 @@ class NeedleView:UIView{
         
         path.move(to: CGPoint(x: realCenter.x, y: realCenter.y + (centerRadius)))
         path.addLine(to: CGPoint(x: realCenter.x, y: realCenter.y + (lineWidth+centerRadius+secondaryLineLength)))
-        context.setStrokeColor(UIColor.orange().cgColor)
+        context.setStrokeColor(UIColor.orange.cgColor)
         path.stroke()
         
         context.restoreGState()
